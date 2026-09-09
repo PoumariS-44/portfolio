@@ -1,254 +1,491 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Explore my projects in artificial intelligence, web development, space technology, renewable energy, and software engineering.">
+          content="Explore my academic and technical projects in artificial intelligence, web development, environmental monitoring, renewable energy, and space technology.">
 
     <meta name="author"
           content="Your Name">
 
     <meta name="robots"
           content="index, follow">
+
     <link rel="stylesheet" href="app.css">
-    <title>Projects</title>
+
+    <title>Projects | My Portfolio</title>
+
 </head>
+
 
 <body>
 
+    <!-- Skip Link -->
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
 
-    <a href="#main-content">Skip to main content</a>
 
-    <header>
-        <h1>My Projects</h1>
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-        <p>
-            A collection of my academic, technical, and ongoing projects.
-        </p>
+    <header class="site-header">
+
+        <div class="header-content">
+
+            <h1>My Projects</h1>
+
+            <p>
+                A collection of my academic, technical,
+                and ongoing projects.
+            </p>
+
+        </div>
+
+
+        <!-- Navigation -->
 
         <nav aria-label="Main navigation">
+
             <ul>
+
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="index.html">
+                        Home
+                    </a>
                 </li>
 
                 <li>
-                    <a href="about.html">About</a>
+                    <a href="about.html">
+                        About
+                    </a>
                 </li>
 
                 <li>
-                    <a href="projects.html" aria-current="page">
+                    <a href="projects.html"
+                       aria-current="page">
                         Projects
                     </a>
                 </li>
 
                 <li>
-                    <a href="contact.html">Contact</a>
+                    <a href="contact.html">
+                        Contact
+                    </a>
                 </li>
+
             </ul>
+
         </nav>
+
     </header>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
 
     <main id="main-content">
 
-        <section aria-labelledby="featured-projects-heading">
+
+        <!-- =========================
+             PROJECTS
+        ========================== -->
+
+        <section id="projects"
+                 aria-labelledby="featured-projects-heading">
 
             <h2 id="featured-projects-heading">
                 Featured Projects
             </h2>
 
-            
-            <article>
-                <header>
-                    <h3>
-                        DetectLearn — Learn Like a Detective
-                    </h3>
 
-                    <p>
-                        <strong>Status:</strong>  Project
-                    </p>
-                </header>
+            <div class="projects">
 
-                <p>
-                    An AI-powered learning platform that transforms
-                    educational chapters into interactive detective-style
-                    investigation experiences. The system generates
-                    conceptual clues and questions to help students
-                    understand and apply what they learn.
-                </p>
 
-                <p>
-                    <strong>Technologies:</strong>
-                    HTML5, CSS3, JavaScript, Python, FastAPI,
-                    and AI APIs.
-                </p>
-            </article>
-            <article>
-                <header>
-                    <h3>
-                        Smart Pantry AI
-                    </h3>
+                <!-- PROJECT 01 -->
 
-                    <p>
-                        <strong>Status:</strong> Project
-                    </p>
-                </header>
+                <article class="project-card">
 
-                <p>
-                    An AI-assisted smart pantry application designed to
-                    manage grocery information from bills, track available
-                    items, provide stock reminders, and suggest recipes
-                    based on available ingredients.
-                </p>
+                    <div class="project-number"
+                         aria-hidden="true">
+                        01
+                    </div>
 
-                <p>
-                    <strong>Technologies:</strong>
-                    Python, AI, and web technologies.
-                </p>
-            </article>
-            <article>
-                <header>
-                    <h3>
-                        Smart Forest Fire Monitoring
-                    </h3>
 
-                    <p>
-                        <strong>Status:</strong> Project
-                    </p>
-                </header>
+                    <div class="project-content">
 
-                <p>
-                    A software-based environmental monitoring platform
-                    designed to support early forest-fire detection by
-                    analyzing environmental information and presenting
-                    potential fire-risk conditions.
-                </p>
+                        <header>
 
-                <p>
-                    <strong>Domain:</strong>
-                    Environment and Artificial Intelligence
-                </p>
+                            <h3>
+                                DetectLearn — Learn Like a Detective
+                            </h3>
 
-                <p>
-                    <strong>Technologies:</strong>
-                    HTML5, CSS3, JavaScript, Python,
-                    and data visualization.
-                </p>
-            </article>
-            <article>
-                <header>
-                    <h3>
-                        LunaBot — Autonomous Lunar Rover
-                    </h3>
+                            <p class="project-status">
+                                <strong>Status:</strong>
+                                Project
+                            </p>
 
-                    <p>
-                        <strong>Status:</strong> Ongoing Project
-                    </p>
-                </header>
+                        </header>
 
-                <p>
-                    A software-based lunar rover simulation focused on
-                    autonomous navigation, path planning, and rover
-                    movement in a simulated lunar environment.
-                </p>
 
-                <p>
-                    <strong>Technologies:</strong>
-                    Unity, C#, pathfinding algorithms,
-                    and simulation.
-                </p>
-            </article>
-            <article>
-                <header>
-                    <h3>
-                        Optimization of Solar Tilt Angle Using Trigonometry
-                    </h3>
+                        <p>
+                            An AI-powered learning platform that
+                            transforms educational chapters into
+                            interactive detective-style investigation
+                            experiences.
+                        </p>
 
-                    <p>
-                        <strong>Status:</strong> Academic Project
-                    </p>
-                </header>
 
-                <p>
-                    A mathematical and analytical project that explores
-                    the optimization of solar panel tilt angles using
-                    trigonometric calculations to improve the alignment
-                    of solar panels with sunlight.
-                </p>
+                        <p>
+                            The system generates conceptual clues
+                            and questions to help students understand
+                            and apply what they learn.
+                        </p>
 
-                <p>
-                    <strong>Core Concept:</strong>
-                    Trigonometry, solar geometry, mathematical
-                    optimization, and renewable energy.
-                </p>
-            </article>
-            <article>
-                <header>
-                    <h3>
-                        Galaxy Explorer
-                    </h3>
 
-                    <p>
-                        <strong>Status:</strong> Project
-                    </p>
-                </header>
+                        <p>
+                            <strong>Technologies:</strong>
+                            HTML5, CSS3, JavaScript, Python,
+                            FastAPI, and AI APIs.
+                        </p>
 
-                <p>
-                    An interactive space-exploration project designed to
-                    present information about galaxies, celestial objects,
-                    and the broader universe through an engaging digital
-                    experience.
-                </p>
+                    </div>
 
-                <p>
-                    <strong>Domain:</strong>
-                    Space Technology and Web Development
-                </p>
-            </article>
+                </article>
+
+
+
+                <!-- PROJECT 02 -->
+
+                <article class="project-card">
+
+                    <div class="project-number"
+                         aria-hidden="true">
+                        02
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <header>
+
+                            <h3>
+                                Smart Pantry AI
+                            </h3>
+
+                            <p class="project-status">
+                                <strong>Status:</strong>
+                                Project
+                            </p>
+
+                        </header>
+
+
+                        <p>
+                            An AI-assisted smart pantry application
+                            designed to manage grocery information
+                            from bills.
+                        </p>
+
+
+                        <p>
+                            It tracks available items, provides stock
+                            reminders, and suggests recipes based on
+                            available ingredients.
+                        </p>
+
+
+                        <p>
+                            <strong>Technologies:</strong>
+                            Python, AI, and web technologies.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJECT 03 -->
+
+                <article class="project-card">
+
+                    <div class="project-number"
+                         aria-hidden="true">
+                        03
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <header>
+
+                            <h3>
+                                Smart Forest Fire Monitoring
+                            </h3>
+
+                            <p class="project-status">
+                                <strong>Status:</strong>
+                                Project
+                            </p>
+
+                        </header>
+
+
+                        <p>
+                            A software-based environmental monitoring
+                            platform designed to support early
+                            forest-fire detection.
+                        </p>
+
+
+                        <p>
+                            The system analyzes environmental
+                            information and presents potential
+                            fire-risk conditions.
+                        </p>
+
+
+                        <p>
+                            <strong>Domain:</strong>
+                            Environment and Artificial Intelligence
+                        </p>
+
+
+                        <p>
+                            <strong>Technologies:</strong>
+                            HTML5, CSS3, JavaScript, Python,
+                            and data visualization.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJECT 04 -->
+
+                <article class="project-card">
+
+                    <div class="project-number"
+                         aria-hidden="true">
+                        04
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <header>
+
+                            <h3>
+                                LunaBot — Autonomous Lunar Rover
+                            </h3>
+
+                            <p class="project-status">
+                                <strong>Status:</strong>
+                                Ongoing Project
+                            </p>
+
+                        </header>
+
+
+                        <p>
+                            A software-based lunar rover simulation
+                            focused on autonomous navigation,
+                            path planning, and rover movement.
+                        </p>
+
+
+                        <p>
+                            The project explores rover movement
+                            in a simulated lunar environment.
+                        </p>
+
+
+                        <p>
+                            <strong>Technologies:</strong>
+                            Unity, C#, pathfinding algorithms,
+                            and simulation.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJECT 05 -->
+
+                <article class="project-card">
+
+                    <div class="project-number"
+                         aria-hidden="true">
+                        05
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <header>
+
+                            <h3>
+                                Optimization of Solar Tilt Angle
+                                Using Trigonometry
+                            </h3>
+
+                            <p class="project-status">
+                                <strong>Status:</strong>
+                                Academic Project
+                            </p>
+
+                        </header>
+
+
+                        <p>
+                            A mathematical and analytical project
+                            that explores the optimization of solar
+                            panel tilt angles.
+                        </p>
+
+
+                        <p>
+                            Trigonometric calculations are used to
+                            improve the alignment of solar panels
+                            with sunlight.
+                        </p>
+
+
+                        <p>
+                            <strong>Core Concept:</strong>
+                            Trigonometry, solar geometry,
+                            mathematical optimization,
+                            and renewable energy.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJECT 06 -->
+
+                <article class="project-card">
+
+                    <div class="project-number"
+                         aria-hidden="true">
+                        06
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <header>
+
+                            <h3>
+                                Galaxy Explorer
+                            </h3>
+
+                            <p class="project-status">
+                                <strong>Status:</strong>
+                                Project
+                            </p>
+
+                        </header>
+
+
+                        <p>
+                            An interactive space-exploration project
+                            designed to present information about
+                            galaxies and celestial objects.
+                        </p>
+
+
+                        <p>
+                            The project creates an engaging digital
+                            experience for exploring information
+                            about the broader universe.
+                        </p>
+
+
+                        <p>
+                            <strong>Domain:</strong>
+                            Space Technology and Web Development
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+            </div>
 
         </section>
 
-        <aside aria-labelledby="project-focus-heading">
+
+
+        <!-- =========================
+             PROJECT FOCUS
+        ========================== -->
+
+        <aside class="project-focus"
+               aria-labelledby="project-focus-heading">
 
             <h2 id="project-focus-heading">
                 My Project Focus
             </h2>
 
             <p>
-                My projects combine computer science with real-world
-                applications across artificial intelligence,
-                environmental monitoring, renewable energy,
-                education, and space technology.
+                My projects combine computer science with
+                real-world applications across artificial
+                intelligence, environmental monitoring,
+                renewable energy, education, and space technology.
             </p>
 
         </aside>
 
+
     </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer>
 
         <p>
-            &copy; 2026 Your Name. All rights reserved.
+            &copy; 2026 Your Name.
+            All rights reserved.
         </p>
 
+
         <nav aria-label="Footer navigation">
+
             <ul>
+
                 <li>
                     <a href="contact.html">
                         Contact Me
                     </a>
                 </li>
+
             </ul>
+
         </nav>
 
     </footer>
 
+
 </body>
+
 </html>
-```
