@@ -1,0 +1,1000 @@
+/* ==================================================
+   ADVANCED CSS3 & RESPONSIVE PORTFOLIO
+   ================================================== */
+
+
+/* ==================================================
+   1. CSS VARIABLES
+   ================================================== */
+
+:root {
+
+    /* Main Colors */
+    --bg-color: #07100c;
+    --card-color: rgba(12, 25, 18, 0.85);
+
+    --text-color: #ffffff;
+    --text-light: rgba(255, 255, 255, 0.78);
+
+    --accent-color: #a8ffd0;
+    --accent-soft: rgba(168, 255, 208, 0.12);
+
+    --border-color: rgba(255, 255, 255, 0.16);
+
+    /* Spacing */
+    --space-small: 10px;
+    --space-medium: 20px;
+    --space-large: 40px;
+    --space-section: 80px;
+
+    /* Border Radius */
+    --radius-small: 10px;
+    --radius-medium: 18px;
+    --radius-large: 25px;
+
+    /* Shadows */
+    --shadow-small:
+        0 8px 20px rgba(0, 0, 0, 0.25);
+
+    --shadow-large:
+        0 20px 45px rgba(0, 0, 0, 0.40);
+
+    /* Transition */
+    --transition: 0.3s ease;
+}
+
+
+/* ==================================================
+   LIGHT THEME
+   ================================================== */
+
+[data-theme="light"] {
+
+    --bg-color: #f4f8f6;
+
+    --card-color: rgba(255, 255, 255, 0.88);
+
+    --text-color: #17231d;
+
+    --text-light: rgba(23, 35, 29, 0.75);
+
+    --accent-color: #168451;
+
+    --accent-soft: rgba(22, 132, 81, 0.10);
+
+    --border-color: rgba(23, 35, 29, 0.15);
+
+    --shadow-small:
+        0 8px 20px rgba(0, 0, 0, 0.10);
+
+    --shadow-large:
+        0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ==================================================
+   2. BASIC RESET
+   ================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    line-height: 1.6;
+
+    color: var(--text-color);
+
+    background-color: var(--bg-color);
+
+    background-image:
+        linear-gradient(
+            rgba(5, 12, 9, 0.55),
+            rgba(5, 12, 9, 0.70)
+        ),
+        url("workspace.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+
+    overflow-x: hidden;
+
+    transition:
+        background-color var(--transition),
+        color var(--transition);
+}
+
+
+/* ==================================================
+   3. GENERAL ELEMENTS
+   ================================================== */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+ul {
+    list-style: none;
+}
+
+
+:focus-visible {
+
+    outline:
+        3px solid var(--accent-color);
+
+    outline-offset: 4px;
+
+    border-radius: var(--radius-small);
+}
+
+
+/* ==================================================
+   4. SKIP LINK
+   ================================================== */
+
+.skip-link {
+
+    position: absolute;
+
+    top: -100px;
+
+    left: 15px;
+
+    padding: 12px 18px;
+
+    background: var(--text-color);
+
+    color: var(--bg-color);
+
+    font-weight: bold;
+
+    border-radius: var(--radius-small);
+
+    z-index: 9999;
+}
+
+
+.skip-link:focus {
+    top: 15px;
+}
+
+
+/* ==================================================
+   5. HEADER
+   ================================================== */
+
+header {
+
+    width: 100%;
+
+    background:
+        rgba(5, 12, 9, 0.85);
+
+    border-bottom:
+        1px solid var(--border-color);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        var(--shadow-small);
+}
+
+
+/* ==================================================
+   6. HEADER CONTENT
+   ================================================== */
+
+.header-content {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 30px 20px 20px;
+
+    text-align: center;
+}
+
+
+.header-content h1 {
+
+    font-size:
+        clamp(2rem, 7vw, 4rem);
+
+    line-height: 1.1;
+
+    margin-bottom: 12px;
+
+    color: var(--text-color);
+}
+
+
+.header-content p {
+
+    color: var(--text-light);
+
+    font-size: 1rem;
+}
+
+
+/* ==================================================
+   7. NAVIGATION
+   ================================================== */
+
+nav {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 15px 20px;
+}
+
+
+nav ul {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+nav a {
+
+    display: block;
+
+    padding: 9px 14px;
+
+    border-radius:
+        var(--radius-small);
+
+    font-weight: 600;
+
+    color: var(--text-color);
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        transform var(--transition);
+}
+
+
+nav a:hover {
+
+    color: var(--accent-color);
+
+    background:
+        var(--accent-soft);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* ==================================================
+   8. MAIN
+   ================================================== */
+
+main {
+
+    width: min(92%, 1180px);
+
+    margin: auto;
+}
+
+
+/* ==================================================
+   9. SECTIONS
+   ================================================== */
+
+section {
+
+    padding:
+        var(--space-section) 0;
+}
+
+
+section h2 {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+
+    font-size:
+        clamp(2rem, 6vw, 3.2rem);
+
+    line-height: 1.2;
+}
+
+
+/* ==================================================
+   10. PROJECT SECTION
+   ================================================== */
+
+#projects {
+
+    padding-top: 70px;
+
+    padding-bottom: 70px;
+}
+
+
+#projects h2 {
+
+    margin-bottom: 45px;
+}
+
+
+/* ==================================================
+   11. CSS GRID
+   ================================================== */
+
+.projects {
+
+    display: grid;
+
+    /*
+       Mobile-first:
+       One column by default
+    */
+
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+}
+
+
+/* ==================================================
+   12. PROJECT CARD
+   ================================================== */
+
+.project-card {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 100%;
+
+    padding: 25px;
+
+    background:
+        var(--card-color);
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius:
+        var(--radius-large);
+
+    box-shadow:
+        var(--shadow-large);
+
+    backdrop-filter:
+        blur(15px);
+
+    overflow: hidden;
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+
+/* ==================================================
+   13. CARD HOVER
+   ================================================== */
+
+.project-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(168, 255, 208, 0.45);
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.50);
+}
+
+
+/* ==================================================
+   14. PROJECT NUMBER
+   ================================================== */
+
+.project-number {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 22px;
+
+    background:
+        var(--accent-soft);
+
+    color:
+        var(--accent-color);
+
+    border:
+        1px solid
+        rgba(168, 255, 208, 0.25);
+
+    border-radius: 50%;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* ==================================================
+   15. PROJECT CONTENT
+   ================================================== */
+
+.project-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+}
+
+
+.project-card h3 {
+
+    margin-bottom: 12px;
+
+    font-size:
+        clamp(1.2rem, 3vw, 1.4rem);
+
+    line-height: 1.4;
+
+    color:
+        var(--text-color);
+}
+
+
+.project-card p {
+
+    margin-bottom: 16px;
+
+    color:
+        var(--text-light);
+
+    font-size: 0.95rem;
+
+    line-height: 1.75;
+}
+
+
+.project-card strong {
+
+    color:
+        var(--text-color);
+}
+
+
+/* ==================================================
+   16. PROJECT STATUS
+   ================================================== */
+
+.project-status {
+
+    color:
+        var(--accent-color) !important;
+
+    font-size: 0.9rem !important;
+
+    margin-bottom: 20px !important;
+}
+
+
+/* ==================================================
+   17. PROJECT FOCUS
+   ================================================== */
+
+.project-focus {
+
+    max-width: 850px;
+
+    margin:
+        50px auto;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background:
+        var(--card-color);
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius:
+        var(--radius-large);
+
+    box-shadow:
+        var(--shadow-large);
+
+    backdrop-filter:
+        blur(15px);
+}
+
+
+.project-focus h2 {
+
+    margin-bottom: 18px;
+}
+
+
+.project-focus p {
+
+    color:
+        var(--text-light);
+
+    line-height: 1.8;
+}
+
+
+/* ==================================================
+   18. ABOUT CARD
+   ================================================== */
+
+.about-card {
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    background:
+        var(--card-color);
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius:
+        var(--radius-large);
+
+    box-shadow:
+        var(--shadow-large);
+
+    backdrop-filter:
+        blur(15px);
+}
+
+
+.about-card p {
+
+    color:
+        var(--text-light);
+
+    line-height: 1.8;
+}
+
+
+/* ==================================================
+   19. SKILLS
+   ================================================== */
+
+.skills {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 25px;
+
+    background:
+        var(--card-color);
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius:
+        var(--radius-large);
+
+    box-shadow:
+        var(--shadow-large);
+
+    backdrop-filter:
+        blur(15px);
+}
+
+
+.skill {
+
+    padding: 8px 15px;
+
+    background:
+        var(--accent-soft);
+
+    color:
+        var(--accent-color);
+
+    border:
+        1px solid
+        rgba(168, 255, 208, 0.25);
+
+    border-radius: 50px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition:
+        transform var(--transition),
+        background var(--transition);
+}
+
+
+.skill:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(168, 255, 208, 0.18);
+}
+
+
+/* ==================================================
+   20. CONTACT FORM
+   ================================================== */
+
+form {
+
+    max-width: 720px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    background:
+        var(--card-color);
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius:
+        var(--radius-large);
+
+    box-shadow:
+        var(--shadow-large);
+
+    backdrop-filter:
+        blur(15px);
+}
+
+
+label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+}
+
+
+input,
+textarea,
+select {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    margin-bottom: 20px;
+
+    background:
+        rgba(0, 0, 0, 0.30);
+
+    color:
+        var(--text-color);
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius:
+        var(--radius-small);
+
+    font: inherit;
+
+    transition:
+        border var(--transition),
+        background var(--transition);
+}
+
+
+input:focus,
+textarea:focus,
+select:focus {
+
+    outline: none;
+
+    border-color:
+        var(--accent-color);
+
+    background:
+        rgba(0, 0, 0, 0.40);
+}
+
+
+textarea {
+
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+
+/* ==================================================
+   21. BUTTONS
+   ================================================== */
+
+button,
+.button,
+.btn {
+
+    display: inline-flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 11px 20px;
+
+    background:
+        var(--accent-soft);
+
+    color:
+        var(--text-color);
+
+    border:
+        1px solid
+        rgba(168, 255, 208, 0.30);
+
+    border-radius:
+        var(--radius-small);
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform var(--transition),
+        background var(--transition);
+}
+
+
+button:hover,
+.button:hover,
+.btn:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(168, 255, 208, 0.22);
+}
+
+
+/* ==================================================
+   22. FOOTER
+   ================================================== */
+
+footer {
+
+    margin-top: 60px;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    background:
+        rgba(5, 10, 8, 0.88);
+
+    border-top:
+        1px solid var(--border-color);
+
+    color:
+        var(--text-light);
+}
+
+
+footer a {
+
+    color:
+        var(--accent-color);
+
+    font-weight: 600;
+}
+
+
+/* ==================================================
+   23. TABLET
+   ================================================== */
+
+@media (min-width: 600px) {
+
+    .projects {
+
+        /*
+           Two-column CSS Grid
+        */
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 28px;
+    }
+
+
+    .project-card {
+
+        padding: 28px;
+    }
+
+
+    .header-content {
+
+        padding:
+            35px 25px 20px;
+    }
+}
+
+
+/* ==================================================
+   24. DESKTOP
+   ================================================== */
+
+@media (min-width: 1000px) {
+
+    nav {
+
+        justify-content: flex-end;
+
+        padding:
+            15px 30px;
+    }
+
+
+    /*
+       Three-column CSS Grid
+    */
+
+    .projects {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 30px;
+    }
+
+
+    #projects {
+
+        padding-top: 100px;
+
+        padding-bottom: 100px;
+    }
+
+
+    .project-card {
+
+        padding: 30px;
+
+        min-height: 420px;
+    }
+
+
+    .project-focus {
+
+        margin-top: 80px;
+
+        padding: 35px;
+    }
+}
+
+
+/* ==================================================
+   25. LARGE DESKTOP
+   ================================================== */
+
+@media (min-width: 1300px) {
+
+    .projects {
+
+        gap: 35px;
+    }
+
+
+    .project-card {
+
+        padding: 32px;
+    }
+}
+
+
+/* ==================================================
+   26. REDUCED MOTION
+   ================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+
+        transition: none !important;
+
+        animation: none !important;
+    }
+}
