@@ -1,17 +1,4 @@
-/* =========================================================
-   PERSONAL PORTFOLIO
-   FULL RESPONSIVE + ACCESSIBLE CSS
-   Works with:
-   index.html
-   about.html
-   projects.html
-   contact.html
-========================================================= */
 
-
-/* =========================================================
-   1. ROOT VARIABLES
-========================================================= */
 
 :root {
 
@@ -63,11 +50,7 @@
 }
 
 
-/* =========================================================
-   2. RESET
-========================================================= */
 
-* {
 
     margin:
         0;
@@ -145,9 +128,6 @@ body {
 }
 
 
-/* =========================================================
-   3. BASIC ELEMENTS
-========================================================= */
 
 img {
 
@@ -195,9 +175,6 @@ p {
 }
 
 
-/* =========================================================
-   4. ACCESSIBILITY
-========================================================= */
 
 :focus-visible {
 
@@ -213,9 +190,6 @@ p {
 }
 
 
-/* =========================================================
-   5. SKIP LINK
-========================================================= */
 
 body > a[href="#main-content"] {
 
@@ -260,9 +234,7 @@ body > a[href="#main-content"]:focus {
 }
 
 
-/* =========================================================
-   6. HEADER
-========================================================= */
+
 
 header {
 
@@ -287,7 +259,7 @@ header {
 }
 
 
-/* Main page heading */
+
 
 header > h1 {
 
@@ -315,7 +287,7 @@ header > h1 {
 }
 
 
-/* Header paragraph */
+
 
 header > p {
 
@@ -340,9 +312,8 @@ header > p {
 }
 
 
-/* =========================================================
-   7. PROJECT PAGE HEADER
-========================================================= */
+
+
 
 .site-header {
 
@@ -394,9 +365,7 @@ header > p {
 }
 
 
-/* =========================================================
-   8. NAVIGATION
-========================================================= */
+
 
 nav {
 
@@ -506,9 +475,7 @@ nav a[aria-current="page"] {
 }
 
 
-/* =========================================================
-   9. MAIN
-========================================================= */
+
 
 main {
 
@@ -521,9 +488,7 @@ main {
 }
 
 
-/* =========================================================
-   10. COMMON SECTIONS
-========================================================= */
+
 
 main > section {
 
@@ -567,9 +532,6 @@ main > section > p {
 }
 
 
-/* =========================================================
-   11. HOME PAGE
-========================================================= */
 
 main > section[aria-labelledby="welcome-heading"] {
 
@@ -681,9 +643,6 @@ main > section[aria-labelledby="welcome-heading"] p:last-child a:hover {
 }
 
 
-/* =========================================================
-   12. HOME HIGHLIGHTS
-========================================================= */
 
 main > section[aria-labelledby="highlights-heading"] {
 
@@ -704,7 +663,6 @@ main > section[aria-labelledby="highlights-heading"] > h2 {
 }
 
 
-/* Highlight articles */
 
 main > section[aria-labelledby="highlights-heading"] article {
 
@@ -775,9 +733,7 @@ main > section[aria-labelledby="highlights-heading"] p {
 }
 
 
-/* =========================================================
-   13. ABOUT PAGE
-========================================================= */
+
 
 main > section[aria-labelledby="introduction-heading"],
 main > section[aria-labelledby="education-heading"],
@@ -789,7 +745,7 @@ main > section[aria-labelledby="skills-heading"] {
 }
 
 
-/* About introduction */
+
 
 main > section[aria-labelledby="introduction-heading"] {
 
@@ -836,9 +792,7 @@ main > section[aria-labelledby="introduction-heading"] p {
 }
 
 
-/* =========================================================
-   14. EDUCATION
-========================================================= */
+
 
 main > section[aria-labelledby="education-heading"] {
 
@@ -888,9 +842,7 @@ main > section[aria-labelledby="education-heading"] h3 {
 }
 
 
-/* =========================================================
-   15. SKILLS
-========================================================= */
+
 
 main > section[aria-labelledby="skills-heading"] {
 
