@@ -1,81 +1,95 @@
+```css
+/* =========================================================
+   POUMARI S — PORTFOLIO
+   Advanced CSS3 & Responsive Architecture
 
+   Features:
+   - CSS Variables
+   - CSS Grid
+   - Flexbox
+   - Glassmorphism
+   - Responsive Mobile-First Design
+   - Light/Dark Theme Variables
+   - Accessibility & Reduced Motion
+========================================================= */
+
+
+/* =========================================================
+   1. CSS VARIABLES
+========================================================= */
 
 :root {
+    --bg: #07110c;
+    --surface: rgba(7, 20, 13, 0.78);
+    --surface-strong: rgba(4, 14, 9, 0.90);
+    --surface-light: rgba(255, 255, 255, 0.08);
 
-    --text:
-        #ffffff;
+    --text: #ffffff;
+    --text-soft: rgba(255, 255, 255, 0.82);
+    --text-muted: rgba(255, 255, 255, 0.62);
 
-    --text-soft:
-        rgba(255, 255, 255, 0.82);
+    --accent: #a8ffd0;
+    --accent-dark: #07140d;
 
-    --text-muted:
-        rgba(255, 255, 255, 0.65);
+    --border: rgba(255, 255, 255, 0.15);
+    --border-hover: rgba(168, 255, 208, 0.50);
 
-    --accent:
-        #a8ffd0;
+    --shadow: 0 20px 55px rgba(0, 0, 0, 0.42);
+    --shadow-small: 0 8px 25px rgba(0, 0, 0, 0.30);
 
-    --accent-dark:
-        #07140d;
+    --radius: 22px;
+    --radius-small: 12px;
 
-    --glass:
-        rgba(7, 18, 12, 0.78);
+    --content-width: 1180px;
 
-    --glass-strong:
-        rgba(5, 14, 9, 0.88);
-
-    --glass-light:
-        rgba(255, 255, 255, 0.08);
-
-    --border:
-        rgba(255, 255, 255, 0.16);
-
-    --border-hover:
-        rgba(168, 255, 208, 0.45);
-
-    --shadow:
-        0 20px 50px rgba(0, 0, 0, 0.42);
-
-    --shadow-small:
-        0 8px 25px rgba(0, 0, 0, 0.30);
-
-    --radius:
-        22px;
-
-    --radius-small:
-        12px;
-
-    --transition:
-        0.3s ease;
-
+    --transition-fast: 0.2s ease;
+    --transition: 0.3s ease;
+    --transition-slow: 0.5s ease;
 }
 
 
+/* =========================================================
+   2. OPTIONAL LIGHT THEME
+   Add class="light-theme" to body if you want light mode.
+========================================================= */
 
+.light-theme {
+    --bg: #f4f8f5;
+    --surface: rgba(255, 255, 255, 0.78);
+    --surface-strong: rgba(255, 255, 255, 0.92);
+    --surface-light: rgba(0, 0, 0, 0.05);
 
-    margin:
-        0;
+    --text: #102018;
+    --text-soft: rgba(16, 32, 24, 0.80);
+    --text-muted: rgba(16, 32, 24, 0.60);
 
-    padding:
-        0;
+    --accent: #167a48;
+    --accent-dark: #ffffff;
 
-    box-sizing:
-        border-box;
+    --border: rgba(16, 32, 24, 0.15);
+    --border-hover: rgba(22, 122, 72, 0.40);
 
+    --shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    --shadow-small: 0 8px 25px rgba(0, 0, 0, 0.10);
 }
 
+
+/* =========================================================
+   3. RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 html {
-
-    scroll-behavior:
-        smooth;
-
+    scroll-behavior: smooth;
 }
 
-
 body {
-
-    min-height:
-        100vh;
+    min-height: 100vh;
 
     font-family:
         "Segoe UI",
@@ -83,2226 +97,1452 @@ body {
         Helvetica,
         sans-serif;
 
-    font-size:
-        16px;
+    font-size: 16px;
+    line-height: 1.6;
 
-    line-height:
-        1.6;
+    color: var(--text);
 
-    color:
-        var(--text);
+    overflow-x: hidden;
 
-    overflow-x:
-        hidden;
-
-    background-color:
-        #1b120d;
-
-    /*
-       IMPORTANT:
-       Put workspace.jpg in the same folder
-       as app.css.
-    */
+    background-color: var(--bg);
 
     background-image:
-
         linear-gradient(
-            rgba(4, 10, 7, 0.50),
-            rgba(4, 10, 7, 0.68)
+            rgba(4, 10, 7, 0.48),
+            rgba(4, 10, 7, 0.70)
         ),
-
         url("workspace.jpg");
 
-    background-size:
-        cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
-    background-position:
-        center center;
-
-    background-repeat:
-        no-repeat;
-
-    background-attachment:
-        fixed;
-
+    transition:
+        background-color var(--transition),
+        color var(--transition);
 }
 
 
+/* =========================================================
+   4. GLOBAL ELEMENTS
+========================================================= */
 
 img {
-
-    max-width:
-        100%;
-
-    height:
-        auto;
-
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
-
 
 a {
-
-    color:
-        var(--accent);
-
-    text-decoration:
-        none;
-
+    color: var(--accent);
+    text-decoration: none;
 }
-
 
 a:hover {
-
-    text-decoration:
-        underline;
-
+    text-decoration: underline;
 }
-
 
 ul {
-
-    list-style:
-        none;
-
+    list-style: none;
 }
-
 
 p {
+    color: var(--text-soft);
+}
 
-    color:
-        var(--text-soft);
+strong {
+    color: var(--text);
+}
 
+::selection {
+    background: var(--accent);
+    color: var(--accent-dark);
 }
 
 
+/* =========================================================
+   5. ACCESSIBILITY
+========================================================= */
 
 :focus-visible {
-
-    outline:
-        3px solid var(--accent);
-
-    outline-offset:
-        4px;
-
-    border-radius:
-        6px;
-
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 6px;
 }
 
 
+/* Skip link */
 
 body > a[href="#main-content"] {
+    position: absolute;
 
-    position:
-        absolute;
+    top: -100px;
+    left: 20px;
 
-    top:
-        -100px;
+    z-index: 9999;
 
-    left:
-        20px;
+    padding: 12px 18px;
 
-    z-index:
-        9999;
+    background: #ffffff;
+    color: #111111;
 
-    padding:
-        12px 18px;
+    font-weight: 700;
 
-    background:
-        #ffffff;
+    border-radius: 10px;
 
-    color:
-        #111111;
-
-    font-weight:
-        700;
-
-    border-radius:
-        10px;
-
-    box-shadow:
-        var(--shadow-small);
-
+    box-shadow: var(--shadow-small);
 }
-
 
 body > a[href="#main-content"]:focus {
-
-    top:
-        20px;
-
+    top: 20px;
 }
 
 
-
+/* =========================================================
+   6. HEADER
+========================================================= */
 
 header {
+    width: 100%;
 
-    width:
-        100%;
+    background: rgba(4, 12, 8, 0.84);
 
-    background:
-        rgba(4, 12, 8, 0.84);
+    border-bottom: 1px solid var(--border);
 
-    border-bottom:
-        1px solid var(--border);
+    box-shadow: var(--shadow-small);
 
-    box-shadow:
-        var(--shadow-small);
-
-    backdrop-filter:
-        blur(16px);
-
-    -webkit-backdrop-filter:
-        blur(16px);
-
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 }
-
-
-
-
-header > h1 {
-
-    max-width:
-        1180px;
-
-    margin:
-        0 auto;
-
-    padding:
-        42px 25px 10px;
-
-    text-align:
-        center;
-
-    font-size:
-        clamp(2.4rem, 6vw, 4.2rem);
-
-    line-height:
-        1.15;
-
-    letter-spacing:
-        -1px;
-
-}
-
-
-
-
-header > p {
-
-    max-width:
-        800px;
-
-    margin:
-        0 auto;
-
-    padding:
-        0 25px 25px;
-
-    text-align:
-        center;
-
-    color:
-        var(--text-soft);
-
-    font-size:
-        1.05rem;
-
-}
-
-
-
-
 
 .site-header {
-
-    background:
-        rgba(4, 12, 8, 0.84);
-
+    background: rgba(4, 12, 8, 0.84);
 }
 
+
+/* Header inner layout */
 
 .header-content {
+    width: min(92%, var(--content-width));
 
-    max-width:
-        1180px;
+    margin: 0 auto;
 
-    margin:
-        auto;
+    padding: 35px 0 15px;
 
-    padding:
-        42px 25px 18px;
-
-    text-align:
-        center;
-
+    text-align: center;
 }
 
 
-.header-content h1 {
+/* Main heading */
 
-    margin:
-        0 0 10px;
+.header-content h1,
+header > h1 {
+    margin-bottom: 10px;
 
-    font-size:
-        clamp(2.4rem, 6vw, 4.2rem);
+    color: var(--text);
 
-    line-height:
-        1.15;
+    font-size: clamp(2.4rem, 7vw, 4.4rem);
 
+    line-height: 1.1;
+
+    letter-spacing: -1.5px;
 }
 
 
-.header-content p {
+/* Header description */
 
-    padding:
-        0;
+.header-content p,
+header > p {
+    max-width: 800px;
 
-    margin:
-        0;
+    margin: 0 auto;
 
+    color: var(--text-soft);
+
+    font-size: 1.05rem;
 }
 
 
-
+/* =========================================================
+   7. NAVIGATION — FLEXBOX
+========================================================= */
 
 nav {
-
-    width:
-        100%;
-
+    width: 100%;
 }
-
 
 header nav {
+    display: flex;
 
-    display:
-        flex;
+    justify-content: center;
+    align-items: center;
 
-    justify-content:
-        center;
-
-    align-items:
-        center;
-
-    padding:
-        12px 20px 20px;
-
+    padding: 10px 15px 20px;
 }
-
 
 nav ul {
+    display: flex;
 
-    display:
-        flex;
+    justify-content: center;
+    align-items: center;
 
-    justify-content:
-        center;
+    flex-wrap: wrap;
 
-    align-items:
-        center;
-
-    flex-wrap:
-        wrap;
-
-    gap:
-        8px;
-
+    gap: 8px;
 }
-
 
 nav li {
-
-    margin:
-        0;
-
+    margin: 0;
 }
 
-
 nav a {
+    display: block;
 
-    display:
-        block;
+    padding: 9px 15px;
 
-    padding:
-        9px 15px;
+    color: rgba(255, 255, 255, 0.88);
 
-    color:
-        rgba(255, 255, 255, 0.88);
+    font-weight: 600;
 
-    font-weight:
-        600;
-
-    border-radius:
-        10px;
+    border-radius: 10px;
 
     transition:
         background var(--transition),
         color var(--transition),
         transform var(--transition);
-
 }
-
 
 nav a:hover {
+    color: var(--accent);
 
-    color:
-        var(--accent);
+    background: rgba(168, 255, 208, 0.10);
 
-    background:
-        rgba(168, 255, 208, 0.10);
+    text-decoration: none;
 
-    text-decoration:
-        none;
-
-    transform:
-        translateY(-2px);
-
+    transform: translateY(-2px);
 }
-
-
-/* Current page */
 
 nav a[aria-current="page"] {
+    color: var(--accent);
 
-    color:
-        var(--accent);
-
-    background:
-        rgba(168, 255, 208, 0.12);
-
+    background: rgba(168, 255, 208, 0.12);
 }
 
 
-
+/* =========================================================
+   8. MAIN CONTAINER
+========================================================= */
 
 main {
+    width: min(92%, var(--content-width));
 
-    width:
-        min(92%, 1180px);
-
-    margin:
-        0 auto;
-
+    margin: 0 auto;
 }
-
-
-
 
 main > section {
+    margin: 0 auto;
 
-    margin:
-        0 auto;
-
-    padding:
-        70px 0;
-
+    padding: 60px 0;
 }
-
 
 main > section > h2 {
+    margin-bottom: 25px;
 
-    margin-bottom:
-        25px;
+    color: var(--text);
 
-    color:
-        white;
+    font-size: clamp(2rem, 5vw, 3rem);
 
-    font-size:
-        clamp(2rem, 5vw, 3rem);
-
-    line-height:
-        1.2;
-
+    line-height: 1.2;
 }
-
 
 main > section > p {
+    max-width: 850px;
 
-    max-width:
-        850px;
+    margin-bottom: 18px;
 
-    margin-bottom:
-        18px;
-
-    font-size:
-        1.02rem;
-
+    font-size: 1.02rem;
 }
 
 
+/* =========================================================
+   9. WELCOME SECTION
+========================================================= */
 
 main > section[aria-labelledby="welcome-heading"] {
+    max-width: 1000px;
 
-    max-width:
-        1000px;
+    margin: 55px auto 35px;
 
-    margin:
-        70px auto 40px;
+    padding: 45px 30px;
 
-    padding:
-        55px;
+    text-align: center;
 
-    text-align:
-        center;
+    background: var(--surface);
 
-    background:
-        var(--glass);
+    border: 1px solid var(--border);
 
-    border:
-        1px solid var(--border);
+    border-radius: var(--radius);
 
-    border-radius:
-        var(--radius);
+    box-shadow: var(--shadow);
 
-    box-shadow:
-        var(--shadow);
-
-    backdrop-filter:
-        blur(18px);
-
-    -webkit-backdrop-filter:
-        blur(18px);
-
-}
-
-
-main > section[aria-labelledby="welcome-heading"] h2 {
-
-    margin-bottom:
-        20px;
-
-    font-size:
-        clamp(2.2rem, 6vw, 3.5rem);
-
-}
-
-
-main > section[aria-labelledby="welcome-heading"] p {
-
-    max-width:
-        800px;
-
-    margin:
-        0 auto 18px;
-
-}
-
-
-main > section[aria-labelledby="welcome-heading"] p:last-child {
-
-    margin-top:
-        28px;
-
-    margin-bottom:
-        0;
-
-}
-
-
-main > section[aria-labelledby="welcome-heading"] p:last-child a {
-
-    display:
-        inline-block;
-
-    padding:
-        12px 22px;
-
-    background:
-        var(--accent);
-
-    color:
-        var(--accent-dark);
-
-    border-radius:
-        12px;
-
-    font-weight:
-        700;
-
-    transition:
-        transform var(--transition),
-        box-shadow var(--transition);
-
-}
-
-
-main > section[aria-labelledby="welcome-heading"] p:last-child a:hover {
-
-    text-decoration:
-        none;
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 10px 25px
-        rgba(168, 255, 208, 0.22);
-
-}
-
-
-
-main > section[aria-labelledby="highlights-heading"] {
-
-    padding:
-        50px 0 90px;
-
-}
-
-
-main > section[aria-labelledby="highlights-heading"] > h2 {
-
-    text-align:
-        center;
-
-    margin-bottom:
-        35px;
-
-}
-
-
-
-main > section[aria-labelledby="highlights-heading"] article {
-
-    display:
-        block;
-
-    margin-bottom:
-        20px;
-
-    padding:
-        28px;
-
-    background:
-        var(--glass);
-
-    border:
-        1px solid var(--border);
-
-    border-radius:
-        var(--radius);
-
-    box-shadow:
-        var(--shadow-small);
-
-    backdrop-filter:
-        blur(14px);
-
-    -webkit-backdrop-filter:
-        blur(14px);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
     transition:
         transform var(--transition),
         border-color var(--transition);
-
 }
 
+main > section[aria-labelledby="welcome-heading"]:hover {
+    border-color: var(--border-hover);
 
-main > section[aria-labelledby="highlights-heading"] article:hover {
-
-    transform:
-        translateY(-5px);
-
-    border-color:
-        var(--border-hover);
-
+    transform: translateY(-3px);
 }
 
+main > section[aria-labelledby="welcome-heading"] h2 {
+    margin-bottom: 18px;
 
-main > section[aria-labelledby="highlights-heading"] h3 {
+    color: var(--text);
 
-    margin-bottom:
-        10px;
-
-    color:
-        white;
-
-    font-size:
-        1.35rem;
-
+    font-size: clamp(2.2rem, 6vw, 3.5rem);
 }
 
+main > section[aria-labelledby="welcome-heading"] p {
+    max-width: 800px;
 
-main > section[aria-labelledby="highlights-heading"] p {
-
-    margin:
-        0;
-
+    margin: 0 auto 18px;
 }
 
+main > section[aria-labelledby="welcome-heading"] p:last-child {
+    margin-top: 28px;
 
-
-
-main > section[aria-labelledby="introduction-heading"],
-main > section[aria-labelledby="education-heading"],
-main > section[aria-labelledby="skills-heading"] {
-
-    padding:
-        55px 0;
-
+    margin-bottom: 0;
 }
 
+main > section[aria-labelledby="welcome-heading"] p:last-child a {
+    display: inline-block;
 
+    padding: 12px 22px;
 
+    background: var(--accent);
 
-main > section[aria-labelledby="introduction-heading"] {
+    color: var(--accent-dark);
 
-    margin-top:
-        35px;
+    border-radius: 12px;
 
-    padding:
-        40px;
-
-    background:
-        var(--glass);
-
-    border:
-        1px solid var(--border);
-
-    border-radius:
-        var(--radius);
-
-    box-shadow:
-        var(--shadow);
-
-    backdrop-filter:
-        blur(16px);
-
-    -webkit-backdrop-filter:
-        blur(16px);
-
-}
-
-
-main > section[aria-labelledby="introduction-heading"] h2 {
-
-    margin-bottom:
-        20px;
-
-}
-
-
-main > section[aria-labelledby="introduction-heading"] p {
-
-    margin-bottom:
-        15px;
-
-}
-
-
-
-
-main > section[aria-labelledby="education-heading"] {
-
-    margin-top:
-        10px;
-
-}
-
-
-main > section[aria-labelledby="education-heading"] > article {
-
-    padding:
-        30px;
-
-    background:
-        var(--glass);
-
-    border:
-        1px solid var(--border);
-
-    border-radius:
-        var(--radius);
-
-    box-shadow:
-        var(--shadow-small);
-
-    backdrop-filter:
-        blur(14px);
-
-    -webkit-backdrop-filter:
-        blur(14px);
-
-}
-
-
-main > section[aria-labelledby="education-heading"] h3 {
-
-    margin-bottom:
-        12px;
-
-    color:
-        white;
-
-    font-size:
-        1.4rem;
-
-}
-
-
-
-
-main > section[aria-labelledby="skills-heading"] {
-
-    padding-top:
-        30px;
-
-}
-
-
-main > section[aria-labelledby="skills-heading"] > ul {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap:
-        15px;
-
-}
-
-
-main > section[aria-labelledby="skills-heading"] li {
-
-    padding:
-        16px;
-
-    text-align:
-        center;
-
-    color:
-        white;
-
-    background:
-        rgba(168, 255, 208, 0.08);
-
-    border:
-        1px solid
-        rgba(168, 255, 208, 0.18);
-
-    border-radius:
-        12px;
-
-    font-weight:
-        600;
+    font-weight: 700;
 
     transition:
         transform var(--transition),
-        background var(--transition);
-
+        box-shadow var(--transition);
 }
 
+main > section[aria-labelledby="welcome-heading"] p:last-child a:hover {
+    text-decoration: none;
 
-main > section[aria-labelledby="skills-heading"] li:hover {
-
-    transform:
-        translateY(-3px);
-
-    background:
-        rgba(168, 255, 208, 0.13);
-
-}
-
-
-/* =========================================================
-   16. ASIDE
-========================================================= */
-
-main > aside {
-
-    margin:
-        30px auto 80px;
-
-    padding:
-        35px;
-
-    background:
-        var(--glass-strong);
-
-    border:
-        1px solid var(--border);
-
-    border-radius:
-        var(--radius);
+    transform: translateY(-3px);
 
     box-shadow:
-        var(--shadow);
-
-    backdrop-filter:
-        blur(17px);
-
-    -webkit-backdrop-filter:
-        blur(17px);
-
-}
-
-
-main > aside h2 {
-
-    margin-bottom:
-        18px;
-
-    color:
-        white;
-
-    font-size:
-        2rem;
-
-}
-
-
-main > aside p {
-
-    line-height:
-        1.8;
-
-}
-
-
-/* About interests */
-
-main > aside[aria-labelledby="interests-heading"] ul {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap:
-        14px;
-
-}
-
-
-main > aside[aria-labelledby="interests-heading"] li {
-
-    padding:
-        14px 16px;
-
-    background:
-        rgba(168, 255, 208, 0.08);
-
-    border:
-        1px solid
-        rgba(168, 255, 208, 0.15);
-
-    border-radius:
-        12px;
-
-    color:
-        white;
-
+        0 10px 25px rgba(168, 255, 208, 0.22);
 }
 
 
 /* =========================================================
-   17. PROJECTS PAGE
+   10. HIGHLIGHTS — CSS GRID
 ========================================================= */
 
-#projects {
+main > section[aria-labelledby="highlights-heading"] {
+    padding: 45px 0 80px;
+}
 
-    padding:
-        80px 0 40px;
+main > section[aria-labelledby="highlights-heading"] > h2 {
+    text-align: center;
 
+    margin-bottom: 35px;
 }
 
 
-#projects > h2 {
+/* Grid layout */
 
-    text-align:
-        center;
-
-    margin-bottom:
-        45px;
-
-    font-size:
-        clamp(2.3rem, 6vw, 3.7rem);
-
+main > section[aria-labelledby="highlights-heading"] {
+    display: block;
 }
 
+main > section[aria-labelledby="highlights-heading"] article {
+    display: block;
 
-/* Project grid */
+    margin-bottom: 20px;
 
-.projects {
+    padding: 28px;
 
-    display:
-        grid;
+    background: var(--surface);
 
-    grid-template-columns:
-        repeat(3, 1fr);
+    border: 1px solid var(--border);
 
-    gap:
-        28px;
+    border-radius: var(--radius);
 
-}
+    box-shadow: var(--shadow-small);
 
-
-/* =========================================================
-   18. PROJECT CARD
-========================================================= */
-
-.project-card {
-
-    position:
-        relative;
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    min-width:
-        0;
-
-    padding:
-        30px;
-
-    background:
-        rgba(6, 18, 11, 0.86);
-
-    border:
-        1px solid var(--border);
-
-    border-radius:
-        var(--radius);
-
-    box-shadow:
-        var(--shadow);
-
-    backdrop-filter:
-        blur(16px);
-
-    -webkit-backdrop-filter:
-        blur(16px);
-
-    overflow:
-        hidden;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 
     transition:
         transform var(--transition),
         border-color var(--transition),
         box-shadow var(--transition);
-
 }
 
+main > section[aria-labelledby="highlights-heading"] article:hover {
+    transform: translateY(-5px);
 
-/* Soft glow */
+    border-color: var(--border-hover);
 
-.project-card::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    top:
-        -80px;
-
-    right:
-        -80px;
-
-    width:
-        180px;
-
-    height:
-        180px;
-
-    border-radius:
-        50%;
-
-    background:
-        rgba(168, 255, 208, 0.08);
-
-    filter:
-        blur(35px);
-
-    pointer-events:
-        none;
-
+    box-shadow: var(--shadow);
 }
 
+main > section[aria-labelledby="highlights-heading"] h3 {
+    margin-bottom: 10px;
 
-.project-card:hover {
+    color: var(--text);
 
-    transform:
-        translateY(-7px);
-
-    border-color:
-        var(--border-hover);
-
-    box-shadow:
-        0 25px 55px
-        rgba(0, 0, 0, 0.52);
-
+    font-size: 1.35rem;
 }
 
 
 /* =========================================================
-   19. PROJECT NUMBER
+   11. ABOUT SECTIONS
+========================================================= */
+
+main > section[aria-labelledby="introduction-heading"],
+main > section[aria-labelledby="education-heading"],
+main > section[aria-labelledby="skills-heading"] {
+    padding: 50px 0;
+}
+
+
+/* Introduction */
+
+main > section[aria-labelledby="introduction-heading"] {
+    margin-top: 30px;
+
+    padding: 38px 30px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+main > section[aria-labelledby="introduction-heading"] h2 {
+    margin-bottom: 18px;
+}
+
+main > section[aria-labelledby="introduction-heading"] p {
+    margin-bottom: 15px;
+}
+
+
+/* Education */
+
+main > section[aria-labelledby="education-heading"] {
+    margin-top: 10px;
+}
+
+main > section[aria-labelledby="education-heading"] > article {
+    padding: 30px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-small);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+main > section[aria-labelledby="education-heading"] h3 {
+    margin-bottom: 12px;
+
+    color: var(--text);
+
+    font-size: 1.4rem;
+}
+
+
+/* =========================================================
+   12. SKILLS — CSS GRID
+========================================================= */
+
+main > section[aria-labelledby="skills-heading"] {
+    padding-top: 30px;
+}
+
+main > section[aria-labelledby="skills-heading"] > ul {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+main > section[aria-labelledby="skills-heading"] li {
+    padding: 16px;
+
+    text-align: center;
+
+    color: var(--text);
+
+    background: rgba(168, 255, 208, 0.08);
+
+    border: 1px solid rgba(168, 255, 208, 0.18);
+
+    border-radius: var(--radius-small);
+
+    font-weight: 600;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        border-color var(--transition);
+}
+
+main > section[aria-labelledby="skills-heading"] li:hover {
+    transform: translateY(-3px);
+
+    background: rgba(168, 255, 208, 0.13);
+
+    border-color: var(--border-hover);
+}
+
+
+/* =========================================================
+   13. ASIDE
+========================================================= */
+
+main > aside {
+    margin: 30px auto 70px;
+
+    padding: 32px;
+
+    background: var(--surface-strong);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    backdrop-filter: blur(17px);
+    -webkit-backdrop-filter: blur(17px);
+}
+
+main > aside h2 {
+    margin-bottom: 18px;
+
+    color: var(--text);
+
+    font-size: 2rem;
+}
+
+main > aside p {
+    line-height: 1.8;
+}
+
+
+/* Interests */
+
+main > aside[aria-labelledby="interests-heading"] ul {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+main > aside[aria-labelledby="interests-heading"] li {
+    padding: 14px 16px;
+
+    background: rgba(168, 255, 208, 0.08);
+
+    border: 1px solid rgba(168, 255, 208, 0.15);
+
+    border-radius: var(--radius-small);
+
+    color: var(--text);
+}
+
+
+/* =========================================================
+   14. PROJECTS
+========================================================= */
+
+#projects {
+    padding: 70px 0 40px;
+}
+
+#projects > h2 {
+    text-align: center;
+
+    margin-bottom: 45px;
+
+    font-size: clamp(2.3rem, 6vw, 3.7rem);
+}
+
+
+/* =========================================================
+   15. PROJECT GRID
+========================================================= */
+
+.projects {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 28px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   16. PROJECT CARD — FLEXBOX
+========================================================= */
+
+.project-card {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+    padding: 30px;
+
+    background: rgba(6, 18, 11, 0.86);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    overflow: hidden;
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.project-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: -80px;
+    right: -80px;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(168, 255, 208, 0.08);
+
+    filter: blur(35px);
+
+    pointer-events: none;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+
+    border-color: var(--border-hover);
+
+    box-shadow:
+        0 25px 55px rgba(0, 0, 0, 0.52);
+}
+
+
+/* =========================================================
+   17. PROJECT NUMBER
 ========================================================= */
 
 .project-number {
+    width: 45px;
+    height: 45px;
 
-    width:
-        45px;
+    display: flex;
 
-    height:
-        45px;
+    align-items: center;
+    justify-content: center;
 
-    display:
-        flex;
+    flex-shrink: 0;
 
-    align-items:
-        center;
+    margin-bottom: 20px;
 
-    justify-content:
-        center;
+    background: rgba(168, 255, 208, 0.10);
 
-    margin-bottom:
-        20px;
+    border: 1px solid rgba(168, 255, 208, 0.22);
 
-    background:
-        rgba(168, 255, 208, 0.10);
+    border-radius: 50%;
 
-    border:
-        1px solid
-        rgba(168, 255, 208, 0.22);
+    color: var(--accent);
 
-    border-radius:
-        50%;
+    font-size: 0.85rem;
 
-    color:
-        var(--accent);
-
-    font-size:
-        0.85rem;
-
-    font-weight:
-        700;
-
+    font-weight: 700;
 }
 
 
 /* =========================================================
-   20. PROJECT CONTENT
+   18. PROJECT CONTENT
 ========================================================= */
 
 .project-content {
+    display: flex;
 
-    display:
-        flex;
+    flex-direction: column;
 
-    flex-direction:
-        column;
-
-    flex:
-        1;
-
+    flex: 1;
 }
-
 
 .project-card .project-content > header {
+    width: auto;
 
-    width:
-        auto;
+    padding: 0;
 
-    padding:
-        0;
+    margin: 0 0 18px;
 
-    margin:
-        0 0 18px;
+    background: transparent;
 
-    background:
-        transparent;
+    border: none;
 
-    border:
-        none;
+    box-shadow: none;
 
-    box-shadow:
-        none;
-
-    backdrop-filter:
-        none;
-
-    -webkit-backdrop-filter:
-        none;
-
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
-
-/* Project title */
-
 .project-card h3 {
+    margin-bottom: 10px;
 
-    margin-bottom:
-        10px;
+    color: var(--text);
 
-    color:
-        white;
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
 
-    font-size:
-        clamp(1.2rem, 2vw, 1.4rem);
-
-    line-height:
-        1.4;
-
+    line-height: 1.4;
 }
 
 
 /* Project status */
 
 .project-status {
+    display: inline-block;
 
-    display:
-        inline-block;
+    width: fit-content;
 
-    width:
-        fit-content;
+    margin: 0 !important;
 
-    margin:
-        0 !important;
+    padding: 6px 11px;
 
-    padding:
-        6px 11px;
+    background: rgba(168, 255, 208, 0.09);
 
-    background:
-        rgba(168, 255, 208, 0.09);
+    border: 1px solid rgba(168, 255, 208, 0.20);
 
-    border:
-        1px solid
-        rgba(168, 255, 208, 0.20);
+    border-radius: 8px;
 
-    border-radius:
-        8px;
+    color: var(--accent) !important;
 
-    color:
-        var(--accent) !important;
-
-    font-size:
-        0.88rem !important;
-
+    font-size: 0.88rem !important;
 }
 
 
 /* Project paragraphs */
 
 .project-card .project-content > p {
+    margin-bottom: 16px;
 
-    margin-bottom:
-        16px;
+    color: var(--text-soft);
 
-    color:
-        var(--text-soft);
+    font-size: 0.96rem;
 
-    font-size:
-        0.96rem;
-
-    line-height:
-        1.75;
-
-}
-
-
-.project-card strong {
-
-    color:
-        white;
-
+    line-height: 1.75;
 }
 
 
 /* =========================================================
-   21. PROJECT FOCUS
+   19. PROJECT FOCUS
 ========================================================= */
 
 .project-focus {
+    max-width: 900px;
 
-    max-width:
-        900px;
+    margin: 55px auto 80px;
 
-    margin:
-        55px auto 90px;
+    padding: 35px;
 
-    padding:
-        35px;
+    text-align: center;
 
-    text-align:
-        center;
+    background: var(--surface-strong);
 
-    background:
-        var(--glass-strong);
+    border: 1px solid var(--border);
 
-    border:
-        1px solid var(--border);
+    border-radius: var(--radius);
 
-    border-radius:
-        var(--radius);
+    box-shadow: var(--shadow);
 
-    box-shadow:
-        var(--shadow);
-
-    backdrop-filter:
-        blur(16px);
-
-    -webkit-backdrop-filter:
-        blur(16px);
-
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
-
 .project-focus h2 {
+    margin-bottom: 15px;
 
-    margin-bottom:
-        15px;
+    color: var(--text);
 
-    color:
-        white;
-
-    font-size:
-        2rem;
-
+    font-size: 2rem;
 }
 
 
 /* =========================================================
-   22. CONTACT PAGE
+   20. CONTACT
 ========================================================= */
 
 main > section[aria-labelledby="contact-heading"] {
+    max-width: 850px;
 
-    max-width:
-        850px;
+    margin: 0 auto;
 
-    margin:
-        0 auto;
-
-    padding:
-        75px 0 35px;
-
+    padding: 70px 0 35px;
 }
-
 
 main > section[aria-labelledby="contact-heading"] > h2 {
+    text-align: center;
 
-    text-align:
-        center;
+    margin-bottom: 12px;
 
-    margin-bottom:
-        12px;
-
-    font-size:
-        clamp(2.3rem, 6vw, 3.5rem);
-
+    font-size: clamp(2.3rem, 6vw, 3.5rem);
 }
 
-
 main > section[aria-labelledby="contact-heading"] > p {
+    text-align: center;
 
-    text-align:
-        center;
-
-    margin-bottom:
-        38px;
-
+    margin-bottom: 38px;
 }
 
 
 /* =========================================================
-   23. CONTACT FORM
+   21. CONTACT FORM
 ========================================================= */
 
 form {
-
-    width:
-        100%;
-
+    width: 100%;
 }
 
-
-/* Contact form specifically */
-
 main > section[aria-labelledby="contact-heading"] form {
+    padding: 35px;
 
-    padding:
-        35px;
+    margin-bottom: 45px;
 
-    margin-bottom:
-        45px;
+    background: rgba(6, 18, 11, 0.84);
 
-    background:
-        rgba(6, 18, 11, 0.84);
+    border: 1px solid var(--border);
 
-    border:
-        1px solid var(--border);
+    border-radius: var(--radius);
 
-    border-radius:
-        var(--radius);
+    box-shadow: var(--shadow);
 
-    box-shadow:
-        var(--shadow);
-
-    backdrop-filter:
-        blur(18px);
-
-    -webkit-backdrop-filter:
-        blur(18px);
-
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 }
 
 
 /* =========================================================
-   24. FIELDSET
+   22. FIELDSET
 ========================================================= */
 
 fieldset {
+    min-width: 0;
 
-    min-width:
-        0;
+    border: none;
 
-    border:
-        none;
+    padding: 0;
 
-    padding:
-        0;
-
-    margin:
-        0;
-
+    margin: 0;
 }
-
 
 legend {
+    width: 100%;
 
-    width:
-        100%;
+    padding: 0;
 
-    padding:
-        0;
+    margin-bottom: 28px;
 
-    margin-bottom:
-        28px;
+    color: var(--text);
 
-    color:
-        white;
+    font-size: 1.45rem;
 
-    font-size:
-        1.45rem;
-
-    font-weight:
-        700;
-
+    font-weight: 700;
 }
 
 
 /* =========================================================
-   25. FORM GROUP
+   23. FORM GROUP
 ========================================================= */
 
-/*
-   Your HTML currently uses:
-   <div>
-      <label>...</label>
-      <input>
-   </div>
-
-   So this selector styles only contact form divs.
-*/
-
 form div {
-
-    margin-bottom:
-        22px;
-
+    margin-bottom: 22px;
 }
 
 
 /* =========================================================
-   26. FORM LABEL
+   24. FORM LABEL
 ========================================================= */
 
 form label {
+    display: block;
 
-    display:
-        block;
+    margin-bottom: 8px;
 
-    margin-bottom:
-        8px;
+    color: var(--text);
 
-    color:
-        white;
+    font-size: 1rem;
 
-    font-size:
-        1rem;
-
-    font-weight:
-        600;
-
+    font-weight: 600;
 }
 
-
-/* Required star */
-
 form label span {
-
-    color:
-        var(--accent);
-
+    color: var(--accent);
 }
 
 
 /* =========================================================
-   27. INPUTS
+   25. INPUTS
 ========================================================= */
 
 form input,
 form textarea {
+    display: block;
 
-    display:
-        block;
+    width: 100%;
 
-    width:
-        100%;
+    padding: 14px 16px;
 
-    padding:
-        14px 16px;
+    margin: 0;
 
-    margin:
-        0;
+    background: rgba(255, 255, 255, 0.07);
 
-    background:
-        rgba(255, 255, 255, 0.07);
+    color: var(--text);
 
-    color:
-        white;
+    border: 1px solid rgba(255, 255, 255, 0.20);
 
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.20);
+    border-radius: var(--radius-small);
 
-    border-radius:
-        12px;
+    font-family: inherit;
 
-    font-family:
-        inherit;
+    font-size: 1rem;
 
-    font-size:
-        1rem;
+    line-height: 1.5;
 
-    line-height:
-        1.5;
-
-    outline:
-        none;
+    outline: none;
 
     transition:
         border-color var(--transition),
         background var(--transition),
         box-shadow var(--transition);
-
 }
-
-
-/* Placeholder */
 
 form input::placeholder,
 form textarea::placeholder {
-
-    color:
-        rgba(255, 255, 255, 0.45);
-
+    color: rgba(255, 255, 255, 0.45);
 }
-
-
-/* Input focus */
 
 form input:focus,
 form textarea:focus {
+    border-color: var(--accent);
 
-    border-color:
-        var(--accent);
-
-    background:
-        rgba(168, 255, 208, 0.07);
+    background: rgba(168, 255, 208, 0.07);
 
     box-shadow:
-        0 0 0 3px
-        rgba(168, 255, 208, 0.10);
-
+        0 0 0 3px rgba(168, 255, 208, 0.10);
 }
 
 
 /* =========================================================
-   28. TEXTAREA
+   26. TEXTAREA
 ========================================================= */
 
 form textarea {
+    min-height: 170px;
 
-    min-height:
-        170px;
-
-    resize:
-        vertical;
-
+    resize: vertical;
 }
 
 
 /* =========================================================
-   29. BUTTON
+   27. BUTTON
 ========================================================= */
 
 form button {
+    display: inline-flex;
 
-    display:
-        inline-flex;
+    justify-content: center;
+    align-items: center;
 
-    justify-content:
-        center;
+    min-width: 150px;
 
-    align-items:
-        center;
+    padding: 13px 24px;
 
-    min-width:
-        150px;
+    background: var(--accent);
 
-    padding:
-        13px 24px;
+    color: var(--accent-dark);
 
-    background:
-        var(--accent);
+    border: none;
 
-    color:
-        #06120b;
+    border-radius: var(--radius-small);
 
-    border:
-        none;
+    font-family: inherit;
 
-    border-radius:
-        12px;
+    font-size: 1rem;
 
-    font-family:
-        inherit;
+    font-weight: 700;
 
-    font-size:
-        1rem;
-
-    font-weight:
-        700;
-
-    cursor:
-        pointer;
+    cursor: pointer;
 
     transition:
         transform var(--transition),
         box-shadow var(--transition);
-
 }
 
-
 form button:hover {
-
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 
     box-shadow:
-        0 10px 25px
-        rgba(168, 255, 208, 0.24);
-
+        0 10px 25px rgba(168, 255, 208, 0.24);
 }
 
 
 /* =========================================================
-   30. CONTACT ASIDE
+   28. CONTACT INFORMATION
 ========================================================= */
 
 main > aside[aria-labelledby="contact-info-heading"] {
+    max-width: 850px;
 
-    max-width:
-        850px;
+    margin: 10px auto 80px;
 
-    margin:
-        10px auto 90px;
-
-    padding:
-        35px;
-
+    padding: 35px;
 }
-
 
 main > aside[aria-labelledby="contact-info-heading"] h2 {
-
-    margin-bottom:
-        20px;
-
+    margin-bottom: 20px;
 }
-
-
-/* Address */
 
 address {
-
-    font-style:
-        normal;
-
+    font-style: normal;
 }
-
 
 address p {
+    margin: 0;
 
-    margin:
-        0;
-
-    padding:
-        15px 0;
-
+    padding: 15px 0;
 }
 
-
 address a {
+    color: var(--accent);
 
-    color:
-        var(--accent);
-
-    font-weight:
-        600;
-
+    font-weight: 600;
 }
 
 
 /* =========================================================
-   31. FOOTER
+   29. FOOTER
 ========================================================= */
 
 footer {
+    width: 100%;
 
-    width:
-        100%;
+    margin-top: 20px;
 
-    margin-top:
-        20px;
+    padding: 35px 20px;
 
-    padding:
-        35px 20px;
+    text-align: center;
 
-    text-align:
-        center;
+    background: rgba(3, 10, 6, 0.90);
 
-    background:
-        rgba(3, 10, 6, 0.90);
-
-    border-top:
-        1px solid var(--border);
-
+    border-top: 1px solid var(--border);
 }
-
 
 footer p {
+    margin-bottom: 12px;
 
-    margin-bottom:
-        12px;
-
-    color:
-        var(--text-muted);
-
+    color: var(--text-muted);
 }
-
 
 footer nav {
+    display: flex;
 
-    display:
-        flex;
-
-    justify-content:
-        center;
-
+    justify-content: center;
 }
-
 
 footer nav a {
+    color: var(--accent);
 
-    color:
-        var(--accent);
-
-    font-weight:
-        600;
-
+    font-weight: 600;
 }
 
 
 /* =========================================================
-   32. TABLET
+   30. TABLET — 700px+
 ========================================================= */
 
-@media (max-width: 999px) {
+@media (min-width: 700px) {
 
-    .projects {
+    main > section[aria-labelledby="highlights-heading"] {
+        display: grid;
 
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
 
+        gap: 20px;
     }
 
+    main > section[aria-labelledby="highlights-heading"] > h2 {
+        grid-column: 1 / -1;
+    }
 
-    main > section[aria-labelledby="skills-heading"] > ul {
+    main > section[aria-labelledby="highlights-heading"] article {
+        margin-bottom: 0;
+    }
 
-        grid-template-columns:
-            repeat(2, 1fr);
-
+    .projects {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
 }
 
 
 /* =========================================================
-   33. MOBILE
+   31. DESKTOP — 1000px+
+========================================================= */
+
+@media (min-width: 1000px) {
+
+    .header-content {
+        padding-top: 45px;
+    }
+
+    main > section {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    main > section[aria-labelledby="highlights-heading"] {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        gap: 24px;
+    }
+
+    .projects {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    main > section[aria-labelledby="skills-heading"] > ul {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   32. MOBILE — UP TO 599px
 ========================================================= */
 
 @media (max-width: 599px) {
 
     body {
-
-        background-attachment:
-            scroll;
-
-        background-position:
-            center center;
-
+        background-attachment: scroll;
     }
 
-
     main {
-
-        width:
-            92%;
-
+        width: 92%;
     }
 
 
     /* Header */
 
-    header > h1 {
-
-        padding:
-            35px 18px 10px;
-
-        font-size:
-            2.4rem;
-
-    }
-
-
-    header > p {
-
-        padding:
-            0 18px 20px;
-
-        font-size:
-            0.95rem;
-
-    }
-
-
     .header-content {
-
-        padding:
-            35px 18px 15px;
-
+        padding: 32px 0 14px;
     }
 
+    .header-content h1,
+    header > h1 {
+        font-size: 2.35rem;
 
-    .header-content h1 {
+        letter-spacing: -0.8px;
+    }
 
-        font-size:
-            2.4rem;
-
+    .header-content p,
+    header > p {
+        font-size: 0.94rem;
     }
 
 
     /* Navigation */
 
     header nav {
-
-        padding:
-            10px 10px 18px;
-
+        padding: 8px 8px 17px;
     }
-
 
     nav ul {
-
-        gap:
-            5px;
-
+        gap: 5px;
     }
-
 
     nav a {
+        padding: 8px 10px;
 
-        padding:
-            8px 10px;
-
-        font-size:
-            0.88rem;
-
+        font-size: 0.86rem;
     }
 
 
-    /* Home */
+    /* Welcome */
 
     main > section[aria-labelledby="welcome-heading"] {
+        width: 100%;
 
-        width:
-            100%;
+        margin: 40px auto 25px;
 
-        margin:
-            45px auto 25px;
+        padding: 30px 22px;
 
-        padding:
-            30px 22px;
-
-        border-radius:
-            20px;
-
+        border-radius: 20px;
     }
-
 
     main > section[aria-labelledby="welcome-heading"] h2 {
-
-        font-size:
-            2.2rem;
-
+        font-size: 2.15rem;
     }
 
+
+    /* Highlights */
 
     main > section[aria-labelledby="highlights-heading"] {
+        display: block;
 
-        padding:
-            40px 0 65px;
-
+        padding: 35px 0 60px;
     }
 
-
     main > section[aria-labelledby="highlights-heading"] article {
+        padding: 23px;
 
-        padding:
-            23px;
-
+        margin-bottom: 18px;
     }
 
 
     /* About */
 
     main > section[aria-labelledby="introduction-heading"] {
+        margin-top: 25px;
 
-        margin-top:
-            30px;
+        padding: 28px 22px;
 
-        padding:
-            28px 22px;
-
-        border-radius:
-            20px;
-
+        border-radius: 20px;
     }
-
 
     main > section[aria-labelledby="education-heading"] {
-
-        padding:
-            40px 0;
-
+        padding: 40px 0;
     }
-
 
     main > section[aria-labelledby="education-heading"] > article {
-
-        padding:
-            25px 22px;
-
+        padding: 25px 22px;
     }
 
+
+    /* Skills */
 
     main > section[aria-labelledby="skills-heading"] > ul {
+        grid-template-columns: 1fr;
 
-        grid-template-columns:
-            1fr;
-
-        gap:
-            12px;
-
+        gap: 12px;
     }
 
 
-    main > aside[aria-labelledby="interests-heading"] ul {
-
-        grid-template-columns:
-            1fr;
-
-    }
-
+    /* Aside */
 
     main > aside {
+        padding: 25px 22px;
 
-        padding:
-            25px 22px;
+        margin-bottom: 55px;
+    }
 
-        margin-bottom:
-            60px;
-
+    main > aside[aria-labelledby="interests-heading"] ul {
+        grid-template-columns: 1fr;
     }
 
 
     /* Projects */
 
     #projects {
-
-        padding:
-            55px 0 30px;
-
+        padding: 50px 0 30px;
     }
-
 
     #projects > h2 {
+        font-size: 2.25rem;
 
-        font-size:
-            2.3rem;
-
-        margin-bottom:
-            35px;
-
+        margin-bottom: 32px;
     }
-
 
     .projects {
+        grid-template-columns: 1fr;
 
-        grid-template-columns:
-            1fr;
-
-        gap:
-            22px;
-
+        gap: 20px;
     }
-
 
     .project-card {
+        padding: 24px;
 
-        padding:
-            24px;
-
-        border-radius:
-            20px;
-
+        border-radius: 20px;
     }
-
 
     .project-card h3 {
-
-        font-size:
-            1.25rem;
-
+        font-size: 1.23rem;
     }
-
 
     .project-card .project-content > p {
-
-        font-size:
-            0.94rem;
-
+        font-size: 0.94rem;
     }
-
 
     .project-focus {
+        margin: 38px auto 60px;
 
-        margin:
-            40px auto 65px;
-
-        padding:
-            26px 22px;
-
+        padding: 26px 22px;
     }
 
-
     .project-focus h2 {
-
-        font-size:
-            1.75rem;
-
+        font-size: 1.7rem;
     }
 
 
     /* Contact */
 
     main > section[aria-labelledby="contact-heading"] {
-
-        padding:
-            55px 0 25px;
-
+        padding: 50px 0 25px;
     }
-
 
     main > section[aria-labelledby="contact-heading"] > h2 {
-
-        font-size:
-            2.3rem;
-
+        font-size: 2.25rem;
     }
-
 
     main > section[aria-labelledby="contact-heading"] > p {
+        font-size: 0.94rem;
 
-        font-size:
-            0.94rem;
-
-        margin-bottom:
-            28px;
-
+        margin-bottom: 28px;
     }
-
 
     main > section[aria-labelledby="contact-heading"] form {
+        padding: 24px;
 
-        padding:
-            24px;
-
-        border-radius:
-            20px;
-
+        border-radius: 20px;
     }
-
 
     legend {
+        font-size: 1.25rem;
 
-        font-size:
-            1.25rem;
-
-        margin-bottom:
-            22px;
-
+        margin-bottom: 22px;
     }
-
 
     form input,
     form textarea {
+        font-size: 0.95rem;
 
-        font-size:
-            0.95rem;
-
-        padding:
-            13px 14px;
-
+        padding: 13px 14px;
     }
-
 
     form textarea {
-
-        min-height:
-            145px;
-
+        min-height: 145px;
     }
-
 
     form button {
-
-        width:
-            100%;
-
+        width: 100%;
     }
-
 
     main > aside[aria-labelledby="contact-info-heading"] {
+        padding: 25px 22px;
 
-        padding:
-            25px 22px;
-
-        margin-bottom:
-            65px;
-
+        margin-bottom: 60px;
     }
 
-
     main > aside[aria-labelledby="contact-info-heading"] h2 {
-
-        font-size:
-            1.7rem;
-
+        font-size: 1.7rem;
     }
 
 
     /* Footer */
 
     footer {
-
-        padding:
-            28px 18px;
-
+        padding: 28px 18px;
     }
-
 }
 
 
 /* =========================================================
-   34. VERY SMALL MOBILE
+   33. VERY SMALL PHONES
 ========================================================= */
 
 @media (max-width: 380px) {
 
     nav a {
+        padding: 7px 8px;
 
-        padding:
-            7px 8px;
-
-        font-size:
-            0.82rem;
-
+        font-size: 0.80rem;
     }
-
 
     .header-content h1,
     header > h1 {
-
-        font-size:
-            2.1rem;
-
+        font-size: 2.05rem;
     }
 
-
     .project-card {
-
-        padding:
-            20px;
-
+        padding: 20px;
     }
 
 }
 
 
 /* =========================================================
-   35. REDUCED MOTION
+   34. REDUCED MOTION — ACCESSIBILITY
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
     html {
-
-        scroll-behavior:
-            auto;
-
+        scroll-behavior: auto;
     }
-
 
     *,
     *::before,
     *::after {
+        transition: none !important;
 
-        transition:
-            none !important;
-
+        animation: none !important;
     }
 
 }
+
+
+/* =========================================================
+   END OF APP.CSS
+========================================================= */
+```
