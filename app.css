@@ -1,3 +1,23 @@
+```css
+/* =========================================================
+   POUMARI S — PORTFOLIO
+   Advanced CSS3 & Responsive Architecture
+
+   Features:
+   - CSS Variables
+   - CSS Grid
+   - Flexbox
+   - Glassmorphism
+   - Responsive Mobile-First Design
+   - Light/Dark Theme Variables
+   - Accessibility & Reduced Motion
+========================================================= */
+
+
+/* =========================================================
+   1. CSS VARIABLES
+========================================================= */
+
 :root {
     --bg: #07110c;
     --surface: rgba(7, 20, 13, 0.78);
@@ -26,6 +46,13 @@
     --transition: 0.3s ease;
     --transition-slow: 0.5s ease;
 }
+
+
+/* =========================================================
+   2. OPTIONAL LIGHT THEME
+   Add class="light-theme" to body if you want light mode.
+========================================================= */
+
 .light-theme {
     --bg: #f4f8f5;
     --surface: rgba(255, 255, 255, 0.78);
@@ -45,6 +72,12 @@
     --shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
     --shadow-small: 0 8px 25px rgba(0, 0, 0, 0.10);
 }
+
+
+/* =========================================================
+   3. RESET
+========================================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -90,6 +123,11 @@ body {
         color var(--transition);
 }
 
+
+/* =========================================================
+   4. GLOBAL ELEMENTS
+========================================================= */
+
 img {
     display: block;
     max-width: 100%;
@@ -121,6 +159,12 @@ strong {
     background: var(--accent);
     color: var(--accent-dark);
 }
+
+
+/* =========================================================
+   5. ACCESSIBILITY
+========================================================= */
+
 :focus-visible {
     outline: 3px solid var(--accent);
     outline-offset: 4px;
@@ -153,6 +197,11 @@ body > a[href="#main-content"] {
 body > a[href="#main-content"]:focus {
     top: 20px;
 }
+
+
+/* =========================================================
+   6. HEADER
+========================================================= */
 
 header {
     width: 100%;
@@ -213,6 +262,12 @@ header > p {
 
     font-size: 1.05rem;
 }
+
+
+/* =========================================================
+   7. NAVIGATION — FLEXBOX
+========================================================= */
+
 nav {
     width: 100%;
 }
@@ -273,6 +328,12 @@ nav a[aria-current="page"] {
 
     background: rgba(168, 255, 208, 0.12);
 }
+
+
+/* =========================================================
+   8. MAIN CONTAINER
+========================================================= */
+
 main {
     width: min(92%, var(--content-width));
 
@@ -302,6 +363,12 @@ main > section > p {
 
     font-size: 1.02rem;
 }
+
+
+/* =========================================================
+   9. WELCOME SECTION
+========================================================= */
+
 main > section[aria-labelledby="welcome-heading"] {
     max-width: 1000px;
 
@@ -379,6 +446,12 @@ main > section[aria-labelledby="welcome-heading"] p:last-child a:hover {
     box-shadow:
         0 10px 25px rgba(168, 255, 208, 0.22);
 }
+
+
+/* =========================================================
+   10. HIGHLIGHTS — CSS GRID
+========================================================= */
+
 main > section[aria-labelledby="highlights-heading"] {
     padding: 45px 0 80px;
 }
@@ -435,6 +508,12 @@ main > section[aria-labelledby="highlights-heading"] h3 {
 
     font-size: 1.35rem;
 }
+
+
+/* =========================================================
+   11. ABOUT SECTIONS
+========================================================= */
+
 main > section[aria-labelledby="introduction-heading"],
 main > section[aria-labelledby="education-heading"],
 main > section[aria-labelledby="skills-heading"] {
@@ -498,6 +577,12 @@ main > section[aria-labelledby="education-heading"] h3 {
 
     font-size: 1.4rem;
 }
+
+
+/* =========================================================
+   12. SKILLS — CSS GRID
+========================================================= */
+
 main > section[aria-labelledby="skills-heading"] {
     padding-top: 30px;
 }
@@ -538,6 +623,12 @@ main > section[aria-labelledby="skills-heading"] li:hover {
 
     border-color: var(--border-hover);
 }
+
+
+/* =========================================================
+   13. ASIDE
+========================================================= */
+
 main > aside {
     margin: 30px auto 70px;
 
@@ -589,6 +680,12 @@ main > aside[aria-labelledby="interests-heading"] li {
 
     color: var(--text);
 }
+
+
+/* =========================================================
+   14. PROJECTS
+========================================================= */
+
 #projects {
     padding: 70px 0 40px;
 }
@@ -600,6 +697,12 @@ main > aside[aria-labelledby="interests-heading"] li {
 
     font-size: clamp(2.3rem, 6vw, 3.7rem);
 }
+
+
+/* =========================================================
+   15. PROJECT GRID
+========================================================= */
+
 .projects {
     display: grid;
 
@@ -609,6 +712,12 @@ main > aside[aria-labelledby="interests-heading"] li {
 
     align-items: stretch;
 }
+
+
+/* =========================================================
+   16. PROJECT CARD — FLEXBOX
+========================================================= */
+
 .project-card {
     position: relative;
 
@@ -667,6 +776,12 @@ main > aside[aria-labelledby="interests-heading"] li {
     box-shadow:
         0 25px 55px rgba(0, 0, 0, 0.52);
 }
+
+
+/* =========================================================
+   17. PROJECT NUMBER
+========================================================= */
+
 .project-number {
     width: 45px;
     height: 45px;
@@ -692,6 +807,12 @@ main > aside[aria-labelledby="interests-heading"] li {
 
     font-weight: 700;
 }
+
+
+/* =========================================================
+   18. PROJECT CONTENT
+========================================================= */
+
 .project-content {
     display: flex;
 
@@ -762,6 +883,12 @@ main > aside[aria-labelledby="interests-heading"] li {
 
     line-height: 1.75;
 }
+
+
+/* =========================================================
+   19. PROJECT FOCUS
+========================================================= */
+
 .project-focus {
     max-width: 900px;
 
@@ -790,6 +917,12 @@ main > aside[aria-labelledby="interests-heading"] li {
 
     font-size: 2rem;
 }
+
+
+/* =========================================================
+   20. CONTACT
+========================================================= */
+
 main > section[aria-labelledby="contact-heading"] {
     max-width: 850px;
 
@@ -811,6 +944,12 @@ main > section[aria-labelledby="contact-heading"] > p {
 
     margin-bottom: 38px;
 }
+
+
+/* =========================================================
+   21. CONTACT FORM
+========================================================= */
+
 form {
     width: 100%;
 }
@@ -831,6 +970,12 @@ main > section[aria-labelledby="contact-heading"] form {
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
 }
+
+
+/* =========================================================
+   22. FIELDSET
+========================================================= */
+
 fieldset {
     min-width: 0;
 
@@ -854,9 +999,21 @@ legend {
 
     font-weight: 700;
 }
+
+
+/* =========================================================
+   23. FORM GROUP
+========================================================= */
+
 form div {
     margin-bottom: 22px;
 }
+
+
+/* =========================================================
+   24. FORM LABEL
+========================================================= */
+
 form label {
     display: block;
 
@@ -872,6 +1029,12 @@ form label {
 form label span {
     color: var(--accent);
 }
+
+
+/* =========================================================
+   25. INPUTS
+========================================================= */
+
 form input,
 form textarea {
     display: block;
@@ -919,11 +1082,22 @@ form textarea:focus {
         0 0 0 3px rgba(168, 255, 208, 0.10);
 }
 
+
+/* =========================================================
+   26. TEXTAREA
+========================================================= */
+
 form textarea {
     min-height: 170px;
 
     resize: vertical;
 }
+
+
+/* =========================================================
+   27. BUTTON
+========================================================= */
+
 form button {
     display: inline-flex;
 
@@ -961,6 +1135,12 @@ form button:hover {
     box-shadow:
         0 10px 25px rgba(168, 255, 208, 0.24);
 }
+
+
+/* =========================================================
+   28. CONTACT INFORMATION
+========================================================= */
+
 main > aside[aria-labelledby="contact-info-heading"] {
     max-width: 850px;
 
@@ -988,6 +1168,12 @@ address a {
 
     font-weight: 600;
 }
+
+
+/* =========================================================
+   29. FOOTER
+========================================================= */
+
 footer {
     width: 100%;
 
@@ -1019,6 +1205,12 @@ footer nav a {
 
     font-weight: 600;
 }
+
+
+/* =========================================================
+   30. TABLET — 700px+
+========================================================= */
+
 @media (min-width: 700px) {
 
     main > section[aria-labelledby="highlights-heading"] {
@@ -1042,6 +1234,12 @@ footer nav a {
     }
 
 }
+
+
+/* =========================================================
+   31. DESKTOP — 1000px+
+========================================================= */
+
 @media (min-width: 1000px) {
 
     .header-content {
@@ -1068,6 +1266,12 @@ footer nav a {
     }
 
 }
+
+
+/* =========================================================
+   32. MOBILE — UP TO 599px
+========================================================= */
+
 @media (max-width: 599px) {
 
     body {
@@ -1291,6 +1495,12 @@ footer nav a {
         padding: 28px 18px;
     }
 }
+
+
+/* =========================================================
+   33. VERY SMALL PHONES
+========================================================= */
+
 @media (max-width: 380px) {
 
     nav a {
@@ -1309,6 +1519,12 @@ footer nav a {
     }
 
 }
+
+
+/* =========================================================
+   34. REDUCED MOTION — ACCESSIBILITY
+========================================================= */
+
 @media (prefers-reduced-motion: reduce) {
 
     html {
