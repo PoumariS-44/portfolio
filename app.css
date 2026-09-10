@@ -45,9 +45,7 @@
     --shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
     --shadow-small: 0 8px 25px rgba(0, 0, 0, 0.10);
 }
-
-
- {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -97,10 +95,12 @@ img {
     max-width: 100%;
     height: auto;
 }
+
 a {
     color: var(--accent);
     text-decoration: none;
 }
+
 a:hover {
     text-decoration: underline;
 }
@@ -126,6 +126,9 @@ strong {
     outline-offset: 4px;
     border-radius: 6px;
 }
+
+
+/* Skip link */
 
 body > a[href="#main-content"] {
     position: absolute;
@@ -169,7 +172,7 @@ header {
 }
 
 
-
+/* Header inner layout */
 
 .header-content {
     width: min(92%, var(--content-width));
@@ -182,7 +185,7 @@ header {
 }
 
 
-
+/* Main heading */
 
 .header-content h1,
 header > h1 {
@@ -196,6 +199,9 @@ header > h1 {
 
     letter-spacing: -1.5px;
 }
+
+
+/* Header description */
 
 .header-content p,
 header > p {
@@ -267,7 +273,6 @@ nav a[aria-current="page"] {
 
     background: rgba(168, 255, 208, 0.12);
 }
-
 main {
     width: min(92%, var(--content-width));
 
@@ -297,7 +302,6 @@ main > section > p {
 
     font-size: 1.02rem;
 }
-
 main > section[aria-labelledby="welcome-heading"] {
     max-width: 1000px;
 
@@ -375,7 +379,6 @@ main > section[aria-labelledby="welcome-heading"] p:last-child a:hover {
     box-shadow:
         0 10px 25px rgba(168, 255, 208, 0.22);
 }
-
 main > section[aria-labelledby="highlights-heading"] {
     padding: 45px 0 80px;
 }
@@ -386,6 +389,8 @@ main > section[aria-labelledby="highlights-heading"] > h2 {
     margin-bottom: 35px;
 }
 
+
+/* Grid layout */
 
 main > section[aria-labelledby="highlights-heading"] {
     display: block;
@@ -430,13 +435,14 @@ main > section[aria-labelledby="highlights-heading"] h3 {
 
     font-size: 1.35rem;
 }
-
-
 main > section[aria-labelledby="introduction-heading"],
 main > section[aria-labelledby="education-heading"],
 main > section[aria-labelledby="skills-heading"] {
     padding: 50px 0;
 }
+
+
+/* Introduction */
 
 main > section[aria-labelledby="introduction-heading"] {
     margin-top: 30px;
@@ -492,9 +498,6 @@ main > section[aria-labelledby="education-heading"] h3 {
 
     font-size: 1.4rem;
 }
-
-
-
 main > section[aria-labelledby="skills-heading"] {
     padding-top: 30px;
 }
@@ -535,9 +538,6 @@ main > section[aria-labelledby="skills-heading"] li:hover {
 
     border-color: var(--border-hover);
 }
-
-
-
 main > aside {
     margin: 30px auto 70px;
 
@@ -566,6 +566,9 @@ main > aside h2 {
 main > aside p {
     line-height: 1.8;
 }
+
+
+/* Interests */
 
 main > aside[aria-labelledby="interests-heading"] ul {
     display: grid;
@@ -724,6 +727,9 @@ main > aside[aria-labelledby="interests-heading"] li {
     line-height: 1.4;
 }
 
+
+/* Project status */
+
 .project-status {
     display: inline-block;
 
@@ -743,6 +749,10 @@ main > aside[aria-labelledby="interests-heading"] li {
 
     font-size: 0.88rem !important;
 }
+
+
+/* Project paragraphs */
+
 .project-card .project-content > p {
     margin-bottom: 16px;
 
@@ -908,6 +918,7 @@ form textarea:focus {
     box-shadow:
         0 0 0 3px rgba(168, 255, 208, 0.10);
 }
+
 form textarea {
     min-height: 170px;
 
@@ -1025,31 +1036,40 @@ footer nav a {
     main > section[aria-labelledby="highlights-heading"] article {
         margin-bottom: 0;
     }
+
     .projects {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
 }
 @media (min-width: 1000px) {
+
     .header-content {
         padding-top: 45px;
     }
+
     main > section {
         padding-top: 75px;
         padding-bottom: 75px;
     }
+
     main > section[aria-labelledby="highlights-heading"] {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+
         gap: 24px;
     }
+
     .projects {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+
     main > section[aria-labelledby="skills-heading"] > ul {
         grid-template-columns: repeat(4, 1fr);
     }
+
 }
 @media (max-width: 599px) {
+
     body {
         background-attachment: scroll;
     }
@@ -1057,162 +1077,250 @@ footer nav a {
     main {
         width: 92%;
     }
+
+
+    /* Header */
+
     .header-content {
         padding: 32px 0 14px;
     }
+
     .header-content h1,
     header > h1 {
         font-size: 2.35rem;
+
         letter-spacing: -0.8px;
     }
+
     .header-content p,
     header > p {
         font-size: 0.94rem;
     }
+
+
+    /* Navigation */
+
     header nav {
         padding: 8px 8px 17px;
     }
+
     nav ul {
         gap: 5px;
     }
+
     nav a {
         padding: 8px 10px;
 
         font-size: 0.86rem;
     }
+
+
+    /* Welcome */
+
     main > section[aria-labelledby="welcome-heading"] {
         width: 100%;
+
         margin: 40px auto 25px;
+
         padding: 30px 22px;
+
         border-radius: 20px;
     }
+
     main > section[aria-labelledby="welcome-heading"] h2 {
         font-size: 2.15rem;
     }
+
+
+    /* Highlights */
+
     main > section[aria-labelledby="highlights-heading"] {
         display: block;
+
         padding: 35px 0 60px;
     }
+
     main > section[aria-labelledby="highlights-heading"] article {
         padding: 23px;
+
         margin-bottom: 18px;
     }
+
+
+    /* About */
+
     main > section[aria-labelledby="introduction-heading"] {
         margin-top: 25px;
+
         padding: 28px 22px;
+
         border-radius: 20px;
     }
+
     main > section[aria-labelledby="education-heading"] {
         padding: 40px 0;
     }
+
     main > section[aria-labelledby="education-heading"] > article {
         padding: 25px 22px;
     }
+
+
+    /* Skills */
+
     main > section[aria-labelledby="skills-heading"] > ul {
         grid-template-columns: 1fr;
 
         gap: 12px;
     }
+
+
+    /* Aside */
+
     main > aside {
         padding: 25px 22px;
 
         margin-bottom: 55px;
     }
+
     main > aside[aria-labelledby="interests-heading"] ul {
         grid-template-columns: 1fr;
     }
+
+
+    /* Projects */
+
     #projects {
         padding: 50px 0 30px;
     }
+
     #projects > h2 {
         font-size: 2.25rem;
 
         margin-bottom: 32px;
     }
+
     .projects {
         grid-template-columns: 1fr;
+
         gap: 20px;
     }
+
     .project-card {
         padding: 24px;
+
         border-radius: 20px;
     }
+
     .project-card h3 {
         font-size: 1.23rem;
     }
+
     .project-card .project-content > p {
         font-size: 0.94rem;
     }
+
     .project-focus {
         margin: 38px auto 60px;
 
         padding: 26px 22px;
     }
+
     .project-focus h2 {
         font-size: 1.7rem;
     }
+
+
+    /* Contact */
+
     main > section[aria-labelledby="contact-heading"] {
         padding: 50px 0 25px;
     }
+
     main > section[aria-labelledby="contact-heading"] > h2 {
         font-size: 2.25rem;
     }
+
     main > section[aria-labelledby="contact-heading"] > p {
         font-size: 0.94rem;
+
         margin-bottom: 28px;
     }
+
     main > section[aria-labelledby="contact-heading"] form {
         padding: 24px;
+
         border-radius: 20px;
     }
+
     legend {
         font-size: 1.25rem;
 
         margin-bottom: 22px;
     }
+
     form input,
     form textarea {
         font-size: 0.95rem;
+
         padding: 13px 14px;
     }
+
     form textarea {
         min-height: 145px;
     }
+
     form button {
         width: 100%;
     }
+
     main > aside[aria-labelledby="contact-info-heading"] {
         padding: 25px 22px;
+
         margin-bottom: 60px;
     }
+
     main > aside[aria-labelledby="contact-info-heading"] h2 {
         font-size: 1.7rem;
     }
+
+
+    /* Footer */
+
     footer {
         padding: 28px 18px;
     }
 }
 @media (max-width: 380px) {
+
     nav a {
         padding: 7px 8px;
+
         font-size: 0.80rem;
     }
+
     .header-content h1,
     header > h1 {
         font-size: 2.05rem;
     }
+
     .project-card {
         padding: 20px;
     }
+
 }
 @media (prefers-reduced-motion: reduce) {
+
     html {
         scroll-behavior: auto;
     }
+
     *,
     *::before,
     *::after {
         transition: none !important;
+
         animation: none !important;
     }
+
 }
