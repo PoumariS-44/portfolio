@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+      content="Interactive To-Do List application demonstrating JavaScript CRUD operations, DOM manipulation, filtering, and local storage.">
+
+<meta name="author"
+      content="Poumari S">
+
+<meta name="robots"
+      content="index, follow">
+
+<link rel="stylesheet" href="app.css">
+
+<title>To-Do List | Poumari S</title>
+
+</head>
+
+<body>
+
+<!-- Skip Link -->
+<a class="skip-link" href="#main-content">
+    Skip to main content
+</a>
+
+
+<!-- =========================
+     HEADER
+========================== -->
+
+<header class="site-header">
+
+    <div class="header-content">
+
+        <h1>My To-Do List</h1>
+
+        <p>
+            A JavaScript-powered task management application
+            with CRUD operations and local storage.
+        </p>
+
+    </div>
+
+
+    <!-- Navigation -->
+
+    <nav aria-label="Main navigation">
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="projects.html">
+                    Projects
+                </a>
+            </li>
+
+            <li>
+                <a href="todo.html"
+                   aria-current="page">
+                    To-Do List
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     MAIN
+========================== -->
+
+<main id="main-content">
+
+    <section class="todo-section"
+             aria-labelledby="todo-heading">
+
+        <h2 id="todo-heading">
+            Task Manager
+        </h2>
+
+        <p class="todo-intro">
+            Add, complete, edit, delete, and filter your tasks.
+            Your tasks are automatically saved in your browser.
+        </p>
+
+
+        <!-- =========================
+             ADD TASK FORM
+        ========================== -->
+
+        <form id="todo-form"
+              class="todo-form">
+
+            <label for="todo-input">
+                Add a new task
+            </label>
+
+            <div class="todo-input-group">
+
+                <input
+                    type="text"
+                    id="todo-input"
+                    name="task"
+                    placeholder="Enter your task..."
+                    autocomplete="off"
+                    maxlength="120"
+                    required>
+
+                <button type="submit">
+                    Add Task
+                </button>
+
+            </div>
+
+        </form>
+
+
+        <!-- =========================
+             TASK SUMMARY
+        ========================== -->
+
+        <div class="todo-summary"
+             aria-live="polite">
+
+            <p>
+                Total:
+                <strong id="total-count">0</strong>
+            </p>
+
+            <p>
+                Active:
+                <strong id="active-count">0</strong>
+            </p>
+
+            <p>
+                Completed:
+                <strong id="completed-count">0</strong>
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             FILTER BUTTONS
+        ========================== -->
+
+        <div class="todo-filters"
+             aria-label="Task filters">
+
+            <button
+                type="button"
+                class="filter-btn active"
+                data-filter="all"
+                aria-pressed="true">
+                All
+            </button>
+
+            <button
+                type="button"
+                class="filter-btn"
+                data-filter="active"
+                aria-pressed="false">
+                Active
+            </button>
+
+            <button
+                type="button"
+                class="filter-btn"
+                data-filter="completed"
+                aria-pressed="false">
+                Completed
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             TASK LIST
+        ========================== -->
+
+        <section aria-labelledby="task-list-heading">
+
+            <h3 id="task-list-heading"
+                class="visually-hidden">
+                Task List
+            </h3>
+
+            <ul id="todo-list"
+                class="todo-list"
+                aria-live="polite">
+            </ul>
+
+            <p id="empty-message"
+               class="empty-message">
+                No tasks yet. Add your first task!
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             CLEAR COMPLETED
+        ========================== -->
+
+        <div class="todo-actions">
+
+            <button
+                type="button"
+                id="clear-completed"
+                class="clear-completed">
+                Clear Completed
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <p>
+        &copy; 2026 Poumari S.
+        All rights reserved.
+    </p>
+
+    <nav aria-label="Footer navigation">
+
+        <ul>
+
+            <li>
+                <a href="contact.html">
+                    Contact Me
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</footer>
+
+
+<!-- JavaScript -->
+
+<script src="todo.js"></script>
+</body>
+
+</html>
